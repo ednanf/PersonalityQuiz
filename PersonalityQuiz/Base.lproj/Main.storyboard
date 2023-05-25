@@ -67,7 +67,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JIJ-Fp-fwv" secondAttribute="trailing" constant="16" id="7RO-bg-Gfw"/>
                             <constraint firstItem="JIJ-Fp-fwv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7fZ-Iw-dBB"/>
                             <constraint firstItem="MTZ-Ss-YbR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="88f-yB-VeO"/>
+                            <constraint firstItem="JIJ-Fp-fwv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DTB-cW-SXQ" secondAttribute="trailing" id="AtX-64-BnE"/>
                             <constraint firstItem="DTB-cW-SXQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DH8-Wp-ecP"/>
+                            <constraint firstItem="KgY-pN-RNN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MTZ-Ss-YbR" secondAttribute="trailing" id="IaA-Nx-GhE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h9Y-YM-USy" secondAttribute="trailing" constant="8" id="N4l-un-y0f"/>
                             <constraint firstItem="h9Y-YM-USy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="OA3-Ax-4yT"/>
                             <constraint firstItem="h9Y-YM-USy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gE8-an-Vix"/>
