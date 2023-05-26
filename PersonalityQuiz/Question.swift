@@ -16,7 +16,7 @@
 //                    \                                                       case dog
 //                      var answers: [Answer] - var text: String            /   case cat
 //                                            \                           /   /
-//                                              var type: AnimalType---------- case rabbit                                  case dog
+//                                              var type: AnimalType ---------- case rabbit                                case dog
 //                                                                   \        \                                          /
 //                                                                    \         case turtle                            /    case cat
 //                                                                     \                                             /    /
