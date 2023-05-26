@@ -284,7 +284,7 @@
                         <outlet property="singleButton3" destination="77p-sp-lwG" id="p5K-Iy-FWU"/>
                         <outlet property="singleButton4" destination="QZs-nm-ZNg" id="XPQ-ET-7Gc"/>
                         <outlet property="singleStackView" destination="fmK-nN-N96" id="6bl-U7-ndd"/>
-                        <segue destination="ge2-oY-g5f" kind="show" identifier="Results" id="EuK-hn-W3l"/>
+                        <segue destination="ge2-oY-g5f" kind="show" identifier="Results" destinationCreationSelector="showResults:" id="EuK-hn-W3l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBv-bS-1QF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

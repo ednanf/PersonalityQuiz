@@ -139,6 +139,11 @@ class QuestionViewController: UIViewController {
         nextQuestion()
     }
     
+    @IBSegueAction func showResults(_ coder: NSCoder) -> ResultsViewController? {
+        return ResultsViewController(coder: coder, responses: answerChosen)
+    }
+    
+    
 // MARK: - Functions
     
     // Responsible for updating the interface - including title, navigation bar and visibility of stack views
@@ -179,16 +184,26 @@ class QuestionViewController: UIViewController {
             // Shows the stack
             multipleStackView.isHidden = false
             
+            // Defaults switches to off
+            
+            multiSwitch1.isOn = false
+            multiSwitch2.isOn = false
+            multiSwitch3.isOn = false
+            multiSwitch4.isOn = false
+            
             // Customizes the title
             multiLabel1.text = answers[0].text
             multiLabel2.text = answers[1].text
             multiLabel3.text = answers[2].text
-            multiLabel4.text = answers[4].text
+            multiLabel4.text = answers[3].text
         }
         
         func updateRangedStack(using answers: [Answer]) {
             // Shows the stack
             rangedStackView.isHidden = false
+            
+            // Default slider position
+            rangedSlider.setValue(0.5, animated: false)
             
             // Th "first" and "last" properties allows to safely access the two Answer structs that corresponds to the label.
             rangedLabel1.text = answers.first?.text
@@ -197,7 +212,13 @@ class QuestionViewController: UIViewController {
     }
     
     func nextQuestion() {
+        questionIndex += 1
         
+        if questionIndex < questions.count {
+            updateUI()
+        } else {
+            performSegue(withIdentifier: "Results", sender: nil)
+        }
     }
     
     
