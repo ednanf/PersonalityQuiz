@@ -26,11 +26,16 @@ class QuestionViewController: UIViewController {
     @IBOutlet var multiLabel2: UILabel!
     @IBOutlet var multiLabel3: UILabel!
     @IBOutlet var multiLabel4: UILabel!
+    @IBOutlet var multiSwitch1: UISwitch!
+    @IBOutlet var multiSwitch2: UISwitch!
+    @IBOutlet var multiSwitch3: UISwitch!
+    @IBOutlet var multiSwitch4: UISwitch!
     
     // Ranged stack outlets
     @IBOutlet var rangedStackView: UIStackView!
     @IBOutlet var rangedLabel1: UILabel!
     @IBOutlet var rangedLabel2: UILabel!
+    @IBOutlet var rangedSlider: UISlider!
     
     @IBOutlet var questionProgressView: UIProgressView!
     
@@ -72,6 +77,7 @@ class QuestionViewController: UIViewController {
     ]
     
     var questionIndex = 0       // Keeps track of answered questions.
+    var answerChosen: [Answer] = []
     
     
 // MARK: - Setup
@@ -81,6 +87,57 @@ class QuestionViewController: UIViewController {
         updateUI()
     }
 
+    
+// MARK: - IBActions
+    
+    @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
+        let currentAnswers = questions[questionIndex].answers
+        
+        switch sender {
+        case singleButton1:
+            answerChosen.append(currentAnswers[0])
+        case singleButton2:
+            answerChosen.append(currentAnswers[1])
+        case singleButton3:
+            answerChosen.append(currentAnswers[2])
+        case singleButton4:
+            answerChosen.append(currentAnswers[3])
+        default:
+            break
+        }
+        
+        nextQuestion()
+        
+    }
+    
+    @IBAction func multipleAnswerButtonPressed() {
+        let currentAnswers = questions[questionIndex].answers
+        
+        if multiSwitch1.isOn {
+            answerChosen.append(currentAnswers[0])
+        }
+        if multiSwitch2.isOn {
+            answerChosen.append(currentAnswers[1])
+        }
+        if multiSwitch3.isOn {
+            answerChosen.append(currentAnswers[2])
+        }
+        if multiSwitch4.isOn {
+            answerChosen.append(currentAnswers[3])
+        }
+        
+        nextQuestion()
+        
+    }
+    
+    @IBAction func rangedAnswerButoonPressed() {
+        let currentAnswers = questions[questionIndex].answers
+        let index = Int(round(rangedSlider.value * Float(currentAnswers.count - 1)))        // Converts the slider's value to an array index.
+        
+        answerChosen.append(currentAnswers[index])
+        
+        nextQuestion()
+    }
     
 // MARK: - Functions
     
@@ -139,7 +196,9 @@ class QuestionViewController: UIViewController {
         }
     }
     
- 
+    func nextQuestion() {
+        
+    }
     
     
     
