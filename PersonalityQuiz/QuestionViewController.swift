@@ -140,7 +140,7 @@ class QuestionViewController: UIViewController {
     }
     
     @IBSegueAction func showResults(_ coder: NSCoder) -> ResultsViewController? {
-        return ResultsViewController(coder: coder, responses: answerChosen)
+        return ResultsViewController(coder: coder, responses: answerChosen)                 // Returns the correct initializer -- otherwise it will use the required default one and crash.
     }
     
     
@@ -156,8 +156,8 @@ class QuestionViewController: UIViewController {
         let currentAnswers = currentQuestion.answers
         let totalProgress = Float(questionIndex) / Float(questions.count)
         
-        navigationItem.title = "Question #\(questionIndex + 1)"             // +1 because the first index is 0, and the title should have a number higher the 0.
-        questionLabel.text = currentQuestion.text                           // Current question string is assigned.
+        navigationItem.title = "Question #\(questionIndex + 1)"                             // +1 because the first index is 0, and the title should have a number higher the 0.
+        questionLabel.text = currentQuestion.text                                           // Current question string is assigned.
         questionProgressView.setProgress(totalProgress, animated: true)
         
         switch currentQuestion.type {
